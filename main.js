@@ -20,4 +20,16 @@ palpites.textContent += palpiteUsuario + " ";
     ultimoResultado.computedStyleMap.backgroundColor = "green";
     baixoOuAlto.textContent = "";
     finalizarJogo(); 
+   } else if (contagemPalpites === 10) {
+    ultimoResultado.textContent = "FIM DE JOGO! ! !";
+    baixoOuAlto.textContent = "";
+    finalizarJogo();
+   } else {
+     ultimoResultado.textContent = "Errado";
+     ultimoResultado.computedStyleMap.backgroundColor = "red";
+     if (palpiteUsuario < numeroAleatorio) {
+     baixoOuAlto.textContent = "O último palpite foi muito baixo";
+   } else if (palpiteUsuario > numeroAleatorio() {
+     baixoOuAlto.textContent = "O último palpite foi muito alto";
    }
+}
