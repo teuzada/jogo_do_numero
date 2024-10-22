@@ -39,4 +39,10 @@ palpites.textContent += palpiteUsuario + " ";
     campoPalpite.focus();
   }
 
-  envioPalpite.addEventListener('click, verificarPalpite')
+  envioPalpite.addEventListener('click, verificarPalpite');
+
+  function finalizarJogo() {
+    campoPalpite.disabled = true;
+    envioPalpite.dasabled = true;
+    botaoReiniciar = document.createElement('button');
+  }
