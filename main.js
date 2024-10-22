@@ -9,9 +9,9 @@
 
 function verificarPalpite() {
     const palpiteUsuario = Number(campoPalpite.value);
-    if (contagemPalpites === 1)
+    if (contagemPalpites === 1) {
         palpites.textContent = "Palpites anteriores: ";
-}
+    }
 
 palpites.textContent += palpiteUsuario + " ";
 
@@ -33,3 +33,10 @@ palpites.textContent += palpiteUsuario + " ";
      baixoOuAlto.textContent = "O último palpite foi muito alto";
    }
 }
+
+    contagemPalpites++;
+    campoPalpite.value = "";
+    campoPalpite.focus();
+  }
+
+  envioPalpite.addEventListener('click, verificarPalpite')
