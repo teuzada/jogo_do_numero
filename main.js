@@ -29,7 +29,7 @@ palpites.textContent += palpiteUsuario + " ";
      ultimoResultado.computedStyleMap.backgroundColor = "red";
      if (palpiteUsuario < numeroAleatorio) {
      baixoOuAlto.textContent = "O último palpite foi muito baixo";
-   } else if (palpiteUsuario > numeroAleatorio() {
+   } else if (palpiteUsuario > numeroAleatorio() ){
      baixoOuAlto.textContent = "O último palpite foi muito alto";
    }
 }
