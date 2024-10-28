@@ -1,4 +1,4 @@
-    let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     const palpites = document.querySelector('.palpites');
     const ultimoResultado = document.querySelector('.ultimoResultado');
     const baixoOuAlto = document.querySelector('.baixoOuAlto');
@@ -7,61 +7,61 @@
     let contagemPalpites = 1;
     let botaoReiniciar;
 
-function verificarPalpite() {
-    const palpiteUsuario = Number(campoPalpite.value);
-    if (contagemPalpites === 1) {
-        palpites.textContent = "Palpites anteriores: ";
-    }
-
-palpites.textContent += palpiteUsuario + " ";
-
-   if (palpiteUsuario === numeroAleatorio) {
-    ultimoResultado.textContent = "Parabéns! Você Acertou!";
-    ultimoResultado.computedStyleMap.backgroundColor = "green";
-    baixoOuAlto.textContent = "";
-    finalizarJogo(); 
-   } else if (contagemPalpites === 10) {
-    ultimoResultado.textContent = "FIM DE JOGO! ! !";
-    baixoOuAlto.textContent = "";
-    finalizarJogo();
-   } else {
-     ultimoResultado.textContent = "Errado";
-     ultimoResultado.computedStyleMap.backgroundColor = "red";
-     if (palpiteUsuario < numeroAleatorio) {
-     baixoOuAlto.textContent = "O último palpite foi muito baixo";
-   } else if (palpiteUsuario > numeroAleatorio() ){
-     baixoOuAlto.textContent = "O último palpite foi muito alto";
-   }
+    function verificarPalpite() {
+        const palpiteUsuario = Number(campoPalpite.value);
+        if (contagemPalpites === 1) {
+          palpites.textContent = "Palpites anteriores: ";
 }
 
-    contagemPalpites++;
-    campoPalpite.value = "";
-    campoPalpite.focus();
-  }
+    palpites.textContent += palpiteUsuario + " ";
 
-  envioPalpite.addEventListener('click, verificarPalpite');
+    if (palpiteUsuario === numeroAleatorio) {
+        ultimoResultado.textContent = "Parabéns! Você acertou!";
+        ultimoResultado.style.backgroudColor = "green";
+        baixoOuAlto.textContent = "";
+        finalizarjogo();
+    } else if (contagemPalpites === 10) {
+        ultimoResultado.textContent = "FIM DE JOGO!!!";
+        baixoOuAlto.textContent = "";
+        finalizarjogo();
+    } else {
+        ultimoResultado.textContent = "Errado";
+        ultimoResultado.style.backgroudColor = "red";
+        if (palpiteUsuario < numeroAleatorio) {
+            baixoOuAlto.textContent = "O ultimo palpite foi muito baixo";
+    } else if (palpiteUsuario > numeroAleatorio) {
+      baixoOuAlto.textContent =  "O ultimo palpite foi muito alto";
+    }
+} 
 
-  function finalizarJogo() {
-    campoPalpite.disabled = true;
-    envioPalpite.dasabled = true;
+contagemPalpites++;
+campoPalpite.value = "";
+campoPalpite.focus();
+    }
+
+envioPalpite.addEventListener('click', verificarPalpite);
+
+function finalizarjogo() {
+    campoPalpite.disable = true;
+    envioPalpite.disable = true;
     botaoReiniciar = document.createElement('button');
     document.body.appendChild(botaoReiniciar);
     botaoReiniciar.addEventListener('click', reiniciarJogo);
-  }
+}
 
 
-  function reiniciarJogo() {
+function reiniciarJogo() {
     contagemPalpites = 1;
-    const paragrafosReiniciar = document.querySelectorAll('paragrafosResultado p');
-    for(const paragrafoReiniciar of paragrafosReiniciar) {
-      paragrafoReiniciar.textContent = "";
-  }
+    const paragrafosReiniciar = document.querySelectorAll('.paragrafosResultado p');
+    for (const paragrafoReiniciar of paragrafoReiniciar) {
+        paragrafoReiniciar.textContent = "";
+}
 
-  botaoReiniciar.parentNode.removeChild(botaoReiniciar);
-  campoPalpite.disabled = false;
-  envioPalpite.disabled = false;
-  campoPalpite.value = "";
-  campoPalpite.focus();
-  ultimoResultado.computedStyleMap.backgroundColor = 'white';
-  numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+botaoReiniciar.parentNode.removeChild(botaoReiniciar);
+campoPalpite.disable = false;
+envioPalpite = false;
+campoPalpite.value = "";
+campoPalpite.focus();
+ultimoResultado.style.backgroudColor = 'white';
+numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 }
